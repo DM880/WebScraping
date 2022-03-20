@@ -1,14 +1,13 @@
 import requests
-import urllib3
+import urllib.request
 from bs4 import BeautifulSoup as BS
 
 url =  input('Enter url: ')
-data = urllib3.ulropen(url)
+data =  urllib.request.urlopen(url)
 
 html = data.read()
 
-soup = BS(html)
-video = soup.find('video')
-src = video['src']
+soup = BS(html, features="html5lib")
+video = soup.find_all('div')
 
 print(video)
