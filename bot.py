@@ -1,9 +1,6 @@
-import requests
-import urllib.request
 from bs4 import BeautifulSoup as BS
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
-import chromedriver_autoinstaller
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 
@@ -20,20 +17,15 @@ url =  input('Enter url: ')
 
 browser.get(url)
 
-# data =  urllib.request.urlopen(url)
-
-# html = data.read()
-
 soup = BS(browser.page_source,features="html.parser")
 
-video = soup.find_all('img')
+video = soup.find_all(['iframe','img','video'])
 
 if video:
-    print(video)
 
     video_url =[]
 
     for vid in video:
-        video_url.append(vid['src'])
+        video_url.append(vid['src' if 'src' else ''])
 
     print(video_url)
