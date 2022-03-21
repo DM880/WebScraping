@@ -19,13 +19,13 @@ browser.get(url)
 
 soup = BS(browser.page_source,features="html.parser")
 
-video = soup.find_all(['iframe','img','video'])
+video = soup.find_all(['iframe','img','video'],{"src":True})
 
-if video:
+video_url = []
 
-    video_url =[]
+for vid in video:
+    source = vid.attrs['src']
 
-    for vid in video:
-        video_url.append(vid['src' if 'src' else ''])
+    video_url.append(source)
 
-    print(video_url)
+print(video_url)
