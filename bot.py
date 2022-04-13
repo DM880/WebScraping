@@ -37,7 +37,7 @@ browser.get(url)
 
 soup = BS(browser.page_source, "html.parser")
 
-video = soup.find_all(["iframe", "img", "video", "div"], {"src": True})
+video = soup.find_all([], {"src": True})
 
 video_url = []
 
@@ -48,11 +48,11 @@ for vid in video:
 
 # Use panda for dataframe and download in excel form
 
-list_url = {'url':video_url}
+list_url = {"url": video_url}
 
 datas = pd.DataFrame(list_url)
 
-datas.to_excel('url_scraped.xlsx', sheet_name='url_scraped')
+datas.to_excel("url_scraped.xlsx", sheet_name="url_scraped")
 
 print(video_url)
 
