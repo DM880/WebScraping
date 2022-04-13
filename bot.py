@@ -1,11 +1,14 @@
 from bs4 import BeautifulSoup as BS
-from selenium import webdriver
 import validators
+import pandas as pd
+from openpyxl import Workbook
 
-from webdriver_manager.chrome import ChromeDriverManager
+
+from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
-import pandas as pd
+from webdriver_manager.chrome import ChromeDriverManager
+
 
 # Set up Chrome
 
@@ -43,13 +46,13 @@ for vid in video:
 
     video_url.append(source)
 
-# Use panda for dataframe and download
+# Use panda for dataframe and download in excel form
 
 list_url = {'url':video_url}
 
 datas = pd.DataFrame(list_url)
 
-datas.to_csv('url_scraped.csv')
+datas.to_excel('url_scraped.xlsx', sheet_name='url_scraped')
 
 print(video_url)
 
