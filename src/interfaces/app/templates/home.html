@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Home {% endblock %}
+
+{% block css %}<link rel="stylesheet" href="{% static 'css/home.css' %}">{% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+  <div class="input-div">
+    <h1>Enter url:</h1>
+    <form method="POST" action="{% url 'get_url' %}">
+    {% csrf_token %}
+    <input class="url-input" name="url">
+    <button type="submit">Download</button>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}

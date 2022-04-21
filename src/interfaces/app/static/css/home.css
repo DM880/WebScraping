@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+
+
+body{
+  background-color: #212121;
+}
+
+.wrapper{
+  width: 100%;
+}
+
+.input-div{
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  margin-top: 200px;
+  font-size: 30px;
+  font-family: 'Noto Serif', serif;
+}
+
+.input-div h1{
+  color: #FF2442;
+  font-size: 70px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.url-input{
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 1px grey solid;
+  font-family: 'Roboto', sans-serif;
+}
+
+.url-input:focus{
+  outline: none !important;
+  box-shadow: 0 0 10px #FF2442;
+  border: solid 1px grey;
+}
+
+button{
+  border:solid transparent;
+  font-weight: bold;
+  padding: 10px;
+  transition: all 0.3s ease;
+  color: white;
+  border-radius: 5px;
+  font-size: 25px;
+  margin-top: 35px;
+  letter-spacing: 3px;
+  background-color: #6BCB77;
+  cursor: pointer;
+}
+
+button:hover{
+  color: #6BCB77;
+  background-color: #212121;
+  border-color: #6BCB77;
+}
