@@ -8,7 +8,8 @@ from .views import views
 
 urlpatterns = [
     path("", views.home, name="home"),
-    path("get_url/", views.get_url, name="get_url"),
+    path("download/", views.download, name="download"),
+    path("download_info/", views.download_info, name="download_info"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,23 @@
+body{
+    background-color: #212121;
+  }
+
+  .wrapper{
+    width: 100%;
+  }
+
+  .download-div{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    margin-top: 200px;
+    font-size: 30px;
+  }
+
+  #info{
+    color: white;
+  }
+
+  #info:hover{
+    color: grey;
+  }

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Download{% endblock %}
+
+{% block css %}<link rel="stylesheet" href="{% static 'css/download.css' %}">{% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+  <div class="download-div">
+  <form method="POST" action="{% url 'download_info' %}">
+  {% csrf_token %}
+  <input value="{{url}}" type="hidden" name="url">
+    <button id="info" type="submit">Download</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

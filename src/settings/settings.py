@@ -115,7 +115,6 @@ USE_TZ = True
 CSRF_TRUSTED_ORIGINS = [env('URL')]
 
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "interfaces/app/static"),)
 STATIC_URL = "/static/"
 
 

@@ -54,10 +54,6 @@ def scrape_bot(url):
 
     datas = pd.DataFrame(list_url)
 
-    # datas.to_excel("url_scraped.xlsx", sheet_name="url_scraped")
-
-    # print(video_url)
-
     browser.quit()
 
     return datas
