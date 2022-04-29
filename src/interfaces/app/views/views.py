@@ -6,9 +6,6 @@ from pathlib import Path
 from src.domain.bot import scrape_bot
 
 
-from src.interfaces.app.views.tasks import data_download
-
-
 def home(request):
     return render(request, "home.html")
 
@@ -35,7 +32,12 @@ def download_info(request):
 
         datas.to_excel("url_scraped.xlsx", sheet_name="url_scraped")
 
-        return redirect('home')
+        return redirect('download_success')
+
+
+def download_success(request):
+
+    return render(request, "success.html")
 
 
 
