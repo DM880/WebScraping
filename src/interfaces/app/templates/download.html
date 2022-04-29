@@ -7,14 +7,19 @@
 
 {% block content %}
 
-<div class="wrapper">
+<div id="body" class="wrapper">
   <div class="download-div">
   <form method="POST" action="{% url 'download_info' %}">
   {% csrf_token %}
   <input value="{{url}}" type="hidden" name="url">
-    <button id="info" class="download-btn" type="submit">Download</button>
+    <button id="info" class="download-btn" onclick="loading()" type="submit">Download</button>
     </form>
   </div>
 </div>
+
+<div id="loading">Loading&#8230;</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+ <script  src="{% static 'js/loading.js' %}"></script>
 
 {% endblock %}

@@ -7,17 +7,12 @@
 
 {% block content %}
 
-<div id="body">
+<div>
   <div class="inside-div">
     <h1>Download Successful</h1>
     <br>
     <a href="{% url 'home' %}">Back Home</a>
   </div>
 </div>
-
-<div id="loading">Loading&#8230;</div>
-
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
-  <script  src="{% static 'js/success.js' %}"></script>
 
 {% endblock %}
